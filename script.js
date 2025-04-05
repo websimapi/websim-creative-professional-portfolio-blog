@@ -1,6 +1,3 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-
 // --- Database Setup ---
 // Assuming WebsimSocket is globally available as per documentation
 const room = new WebsimSocket();
