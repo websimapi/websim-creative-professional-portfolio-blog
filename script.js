@@ -341,11 +341,3 @@ if (document.readyState === 'loading') {
 } else {
     initializeApp();
 }
-
-// Example of using React if needed for more complex components later
-// const container = document.getElementById('react-root'); // Add a div with id="react-root" in HTML if needed
-// if (container) {
-//     const root = createRoot(container);
-//     root.render(React.createElement('h1', null, 'React is integrated!'));
-// }
-
