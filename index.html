@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Professional - Portfolio & Blog</title>
+    <meta name="description" content="Personal blog and portfolio showcasing creative work and insights.">
+    <meta name="keywords" content="portfolio, blog, creative professional, design, web development">
+    <meta property="og:title" content="Creative Professional - Portfolio & Blog">
+    <meta property="og:description" content="Explore the work and thoughts of a passionate creative professional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com"> 
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header" class="main-header">
+        <nav class="navigation">
+            <a href="#home" class="logo">Creative Pro</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Creative Professional</h1>
+                <p class="tagline">Innovating at the intersection of design and technology.</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400" alt="Professional headshot" class="profile-photo">
+                <p>Hello! I'm a passionate creative professional specializing in [Your Specialization, e.g., UI/UX design and front-end development]. With a keen eye for detail and a love for problem-solving, I strive to create engaging and user-friendly digital experiences. Learn more about my journey and skills.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project items will be loaded here by JS -->
+            </div>
+             <div class="add-project-form">
+                 <h3>Add New Project</h3>
+                 <input type="text" id="project-title" placeholder="Project Title" required>
+                 <textarea id="project-description" placeholder="Short Description" required></textarea>
+                 <input type="text" id="project-thumbnail" placeholder="Thumbnail URL (optional)">
+                 <input type="text" id="project-link" placeholder="Full Project Link (e.g., GitHub, Live Site)" required>
+                 <button id="add-project-button">Add Project</button>
+             </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2>Latest Blog Posts</h2>
+            <div class="blog-posts-list">
+                <!-- Blog posts will be loaded here by JS -->
+            </div>
+             <div class="add-post-form">
+                 <h3>Write New Post</h3>
+                 <input type="text" id="post-title" placeholder="Post Title" required>
+                 <textarea id="post-content" placeholder="Write your post content here (supports basic Markdown: **bold**, *italic*, `code`)" rows="10" required></textarea>
+                 <button id="add-post-button">Publish Post</button>
+             </div>
+        </section>
+
+         <section id="contact" class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>Have a project idea or just want to chat? Feel free to reach out!</p>
+            <form id="contact-form">
+                 <input type="text" id="contact-name" placeholder="Your Name" required>
+                 <input type="email" id="contact-email" placeholder="Your Email" required>
+                 <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                 <button type="submit">Send Message</button>
+            </form>
+            <div id="contact-response"></div>
+        </section>
+
+    </main>
+
+    <footer id="main-footer" class="main-footer">
+        <p>&copy; <span id="copyright-year"></span> Creative Professional. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Link to Twitter profile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+            <a href="#" aria-label="Link to LinkedIn profile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="#" aria-label="Link to GitHub profile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+        </div>
+        <a href="#privacy">Privacy Policy</a>
+    </footer>
+
+    <script type="importmap">
+    {
+        "imports": {
+          "react": "https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js",
+          "react-dom/client": "https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"
+        }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
