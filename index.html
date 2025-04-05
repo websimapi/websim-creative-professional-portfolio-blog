@@ -43,8 +43,13 @@
         <section id="about" class="about-section">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400" alt="Professional headshot" class="profile-photo">
-                <p>Hello! I'm a passionate creative professional specializing in [Your Specialization, e.g., UI/UX design and front-end development]. With a keen eye for detail and a love for problem-solving, I strive to create engaging and user-friendly digital experiences. Learn more about my journey and skills.</p>
+                <img src="" alt="User profile photo" class="profile-photo" id="profile-photo-img" style="display: none;"> 
+                <div class="about-text">
+                    <h3 id="profile-username"><a href="#">Loading...</a></h3>
+                    <p id="profile-description">Loading user information...</p>
+                    <p id="about-login-prompt" style="display: none;">Log in to see user details.</p>
+                </div>
+
             </div>
         </section>
 
@@ -53,14 +58,14 @@
             <div class="projects-grid">
                 <!-- Project items will be loaded here by JS -->
             </div>
-             <div class="add-project-form">
-                 <h3>Add New Project</h3>
-                 <input type="text" id="project-title" placeholder="Project Title" required>
-                 <textarea id="project-description" placeholder="Short Description" required></textarea>
-                 <input type="text" id="project-thumbnail" placeholder="Thumbnail URL (optional)">
-                 <input type="text" id="project-link" placeholder="Full Project Link (e.g., GitHub, Live Site)" required>
-                 <button id="add-project-button">Add Project</button>
-             </div>
+            <div class="add-project-form">
+                <h3>Add New Project</h3>
+                <input type="text" id="project-title" placeholder="Project Title" required>
+                <textarea id="project-description" placeholder="Short Description" required></textarea>
+                <input type="text" id="project-thumbnail" placeholder="Thumbnail URL (optional)">
+                <input type="text" id="project-link" placeholder="Full Project Link (e.g., GitHub, Live Site)" required>
+                <button id="add-project-button">Add Project</button>
+            </div>
         </section>
 
         <section id="blog" class="blog-section">
@@ -68,22 +73,22 @@
             <div class="blog-posts-list">
                 <!-- Blog posts will be loaded here by JS -->
             </div>
-             <div class="add-post-form">
-                 <h3>Write New Post</h3>
-                 <input type="text" id="post-title" placeholder="Post Title" required>
-                 <textarea id="post-content" placeholder="Write your post content here (supports basic Markdown: **bold**, *italic*, `code`)" rows="10" required></textarea>
-                 <button id="add-post-button">Publish Post</button>
-             </div>
+            <div class="add-post-form">
+                <h3>Write New Post</h3>
+                <input type="text" id="post-title" placeholder="Post Title" required>
+                <textarea id="post-content" placeholder="Write your post content here (supports basic Markdown: **bold**, *italic*, `code`)" rows="10" required></textarea>
+                <button id="add-post-button">Publish Post</button>
+            </div>
         </section>
 
-         <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section">
             <h2>Get In Touch</h2>
             <p>Have a project idea or just want to chat? Feel free to reach out!</p>
             <form id="contact-form">
-                 <input type="text" id="contact-name" placeholder="Your Name" required>
-                 <input type="email" id="contact-email" placeholder="Your Email" required>
-                 <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
-                 <button type="submit">Send Message</button>
+                <input type="text" id="contact-name" placeholder="Your Name" required>
+                <input type="email" id="contact-email" placeholder="Your Email" required>
+                <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
             <div id="contact-response"></div>
         </section>
@@ -112,4 +117,3 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
-

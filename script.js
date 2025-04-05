@@ -26,6 +26,46 @@ function parseContent(text) {
 
 // --- UI Rendering Functions ---
 
+// Load user profile information into the About section
+async function loadUserProfile() {
+    const photoImg = document.getElementById('profile-photo-img');
+    const usernameEl = document.getElementById('profile-username');
+    const descriptionEl = document.getElementById('profile-description');
+    const loginPrompt = document.getElementById('about-login-prompt');
+
+    if (!photoImg || !usernameEl || !descriptionEl || !loginPrompt) {
+        console.error("About section elements not found.");
+        return;
+    }
+
+    try {
+        const user = await window.websim.getUser();
+
+        if (user && user.username) {
+            photoImg.src = `https://images.websim.ai/avatar/${user.username}`;
+            photoImg.alt = `${user.username}'s profile photo`;
+            photoImg.style.display = 'block'; // Show the image element
+
+            usernameEl.innerHTML = `<a href="https://websim.ai/@${user.username}" target="_blank" rel="noopener noreferrer">@${user.username}</a>`;
+            descriptionEl.textContent = user.description || "No description provided."; // Use description or default
+
+            loginPrompt.style.display = 'none'; // Hide login prompt
+        } else {
+            // Not logged in or user data incomplete
+            photoImg.style.display = 'none'; // Hide image placeholder
+            usernameEl.textContent = 'Welcome, Guest!';
+            descriptionEl.textContent = 'This is a collaborative portfolio and blog. Log in or explore the content below.';
+            loginPrompt.style.display = 'block'; // Show login prompt (optional)
+        }
+    } catch (error) {
+        console.error("Error loading user profile:", error);
+        photoImg.style.display = 'none';
+        usernameEl.textContent = 'Error';
+        descriptionEl.textContent = 'Could not load user information.';
+        loginPrompt.style.display = 'none';
+    }
+}
+
 function renderProjects(projects) {
     const projectsGrid = document.querySelector('.projects-grid');
     if (!projectsGrid) return;
@@ -40,7 +80,7 @@ function renderProjects(projects) {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer">View Project</a>` : ''}
-                 <small>Added by: ${project.username} on ${formatDate(project.created_at)}</small>
+                <small>Added by: ${project.username || 'Unknown User'} on ${formatDate(project.created_at)}</small>
             </div>
         </div>
     `).join('');
@@ -56,7 +96,7 @@ function renderBlogPosts(posts) {
              <header>
                 <h3>${post.title}</h3>
                 <time datetime="${post.created_at}">${formatDate(post.created_at)}</time>
-                <p class="author">By: ${post.username}</p>
+                <p class="author">By: ${post.username || 'Unknown User'}</p>
             </header>
             <section>
                 <p>${parseContent(post.content.substring(0, 150))}...</p> 
@@ -93,7 +133,7 @@ function displayFullPost(post) {
                 <header>
                     <h1>${post.title}</h1>
                     <time datetime="${post.created_at}">${formatDate(post.created_at)}</time>
-                     <p class="author">By: ${post.username}</p>
+                     <p class="author">By: ${post.username || 'Unknown User'}</p>
                 </header>
                 <section>
                     ${parseContent(post.content)}
@@ -280,6 +320,10 @@ function initializeApp() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+
+    // Load user profile data into About section
+    loadUserProfile(); // Call the new function
+
 
     // Add form event listeners
     const addProjectButton = document.getElementById('add-project-button');
